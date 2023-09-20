@@ -1,0 +1,18 @@
+﻿@model string
+
+@{
+    var supportedCultures = new List<SelectListItem>()
+    {
+        new SelectListItem{ Value = "en-US", Text = "English" },
+        new SelectListItem{ Value = "es-ES", Text = "Español" },
+        // Add more supported cultures here.
+    };
+}
+
+<div id="language-selector">
+    <form asp-controller="Home" asp-action="SetCulture" asp-route-returnUrl="@Context.Request.Path" method="post">
+        <select asp-for="@Model" asp-items="@supportedCultures" id="ddlLanguage" name="culture" onchange="this.form.submit()">
+            <option value="">Select Language</option>
+        </select>
+    </form>
+</div>
