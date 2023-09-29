@@ -176,6 +176,8 @@ In a view of your choosing add the following
 ## Cross your fingers and run the project
 Run the Project
 
+Depending on where you place the Langauge Drop down you should be able to select a langauge and see the resource switch
+
 <img loading="lazy" width="450px" src="./Media/MichaelScottWillItWork.jpg" alt="Fingers Crossed" />
 
 
