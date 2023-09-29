@@ -151,9 +151,27 @@ So you should have a partial view added to your project like this..
 
 Add the partial view to the layout
 
+I added the below code to my _Layout.cshtml within my navbar section.
 ```
- @await Html.PartialAsync("_LanguageSelector", CultureInfo.CurrentCulture.Name)
+    <div class="languageSection">
+                     @await Html.PartialAsync("_LanguageSelector", System.Globalization.CultureInfo.CurrentCulture.Name)
+    </div>
 ```
+
+### Update your view to include the Resource Key to use.
+
+In a view of your choosing add the following
+
+```
+@using Microsoft.Extensions.Localization;
+@using [projectName].Resources;
+@inject IStringLocalizer<SharedResource> Localizer
+@using Microsoft.AspNetCore.Mvc.Localization
+
+
+<p>@Localizer["WelcomeMessage"]</p>
+```
+
 
 ## Cross your fingers and run the project
 Run the Project
